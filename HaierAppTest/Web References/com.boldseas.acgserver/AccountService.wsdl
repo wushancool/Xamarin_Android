@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccountService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Haier.Model" />
+      <xsd:import schemaLocation="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Haier.Enumerations" />
+      <xsd:import schemaLocation="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccountService_GetUserListByPara_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListByPara" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserListByPara_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListByParaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseRole" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserRoleByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserRoleByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseModule" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseModuleFun_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseModuleFun" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseModuleFun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseModuleFunResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseRoleFun_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseRoleFun" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetBaseRoleFun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseRoleFunResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserInfoByTypeAndOrgnizationId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByTypeAndOrgnizationId" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserInfoByTypeAndOrgnizationId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByTypeAndOrgnizationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAllUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAllUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserByRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByRole" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetUserByRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAllWebUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWebUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAllWebUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWebUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetWebUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebUserById" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetWebUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_CheckUserInfoExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserInfoExists" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_CheckUserInfoExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserInfoExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_WebUserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:WebUserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_WebUserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WebUserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_EditUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_EditUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UserRegist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegist" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UserRegist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateBBSUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBBSUserID" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateBBSUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBBSUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_InsertCodeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCodeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_InsertCodeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCodeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateWebUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateWebUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccountService">
+    <wsdl:operation name="GetUserListByPara">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetUserListByPara" message="tns:IAccountService_GetUserListByPara_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetUserListByParaResponse" message="tns:IAccountService_GetUserListByPara_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetBaseRole" message="tns:IAccountService_GetBaseRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetBaseRoleResponse" message="tns:IAccountService_GetBaseRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetBaseUserRole" message="tns:IAccountService_GetBaseUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetBaseUserRoleResponse" message="tns:IAccountService_GetBaseUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetUserRoleByUserID" message="tns:IAccountService_GetUserRoleByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetUserRoleByUserIDResponse" message="tns:IAccountService_GetUserRoleByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetBaseModule" message="tns:IAccountService_GetBaseModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetBaseModuleResponse" message="tns:IAccountService_GetBaseModule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseModuleFun">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetBaseModuleFun" message="tns:IAccountService_GetBaseModuleFun_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetBaseModuleFunResponse" message="tns:IAccountService_GetBaseModuleFun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseRoleFun">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetBaseRoleFun" message="tns:IAccountService_GetBaseRoleFun_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetBaseRoleFunResponse" message="tns:IAccountService_GetBaseRoleFun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UserLogin" message="tns:IAccountService_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UserLoginResponse" message="tns:IAccountService_UserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetUserInfoById" message="tns:IAccountService_GetUserInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetUserInfoByIdResponse" message="tns:IAccountService_GetUserInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByTypeAndOrgnizationId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetUserInfoByTypeAndOrgnizationId" message="tns:IAccountService_GetUserInfoByTypeAndOrgnizationId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetUserInfoByTypeAndOrgnizationIdResponse" message="tns:IAccountService_GetUserInfoByTypeAndOrgnizationId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetAllUser" message="tns:IAccountService_GetAllUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetAllUserResponse" message="tns:IAccountService_GetAllUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetUserByRole" message="tns:IAccountService_GetUserByRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetUserByRoleResponse" message="tns:IAccountService_GetUserByRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWebUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetAllWebUser" message="tns:IAccountService_GetAllWebUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetAllWebUserResponse" message="tns:IAccountService_GetAllWebUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetWebUserById" message="tns:IAccountService_GetWebUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetWebUserByIdResponse" message="tns:IAccountService_GetWebUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserInfoExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/CheckUserInfoExists" message="tns:IAccountService_CheckUserInfoExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/CheckUserInfoExistsResponse" message="tns:IAccountService_CheckUserInfoExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WebUserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/WebUserLogin" message="tns:IAccountService_WebUserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/WebUserLoginResponse" message="tns:IAccountService_WebUserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/ChangePassword" message="tns:IAccountService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/ChangePasswordResponse" message="tns:IAccountService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UpdateUserInfo" message="tns:IAccountService_UpdateUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UpdateUserInfoResponse" message="tns:IAccountService_UpdateUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/EditUser" message="tns:IAccountService_EditUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/EditUserResponse" message="tns:IAccountService_EditUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/AddUser" message="tns:IAccountService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/AddUserResponse" message="tns:IAccountService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRegist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UserRegist" message="tns:IAccountService_UserRegist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UserRegistResponse" message="tns:IAccountService_UserRegist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBBSUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UpdateBBSUserID" message="tns:IAccountService_UpdateBBSUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UpdateBBSUserIDResponse" message="tns:IAccountService_UpdateBBSUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCodeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/InsertCodeInfo" message="tns:IAccountService_InsertCodeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/InsertCodeInfoResponse" message="tns:IAccountService_InsertCodeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UpdateWebUserInfo" message="tns:IAccountService_UpdateWebUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UpdateWebUserInfoResponse" message="tns:IAccountService_UpdateWebUserInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAccountService" type="tns:IAccountService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserListByPara">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetUserListByPara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseRole">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetBaseRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseUserRole">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetBaseUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleByUserID">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetUserRoleByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseModule">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetBaseModule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseModuleFun">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetBaseModuleFun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseRoleFun">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetBaseRoleFun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetUserInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByTypeAndOrgnizationId">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetUserInfoByTypeAndOrgnizationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetAllUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByRole">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetUserByRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWebUser">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetAllWebUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebUserById">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/GetWebUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserInfoExists">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/CheckUserInfoExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebUserLogin">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/WebUserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditUser">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/EditUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRegist">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/UserRegist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBBSUserID">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/UpdateBBSUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCodeInfo">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/InsertCodeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IAccountService/UpdateWebUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountService">
+    <wsdl:port name="BasicHttpBinding_IAccountService" binding="tns:BasicHttpBinding_IAccountService">
+      <soap:address location="http://acgserver.boldseas.com/Service/AccountService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

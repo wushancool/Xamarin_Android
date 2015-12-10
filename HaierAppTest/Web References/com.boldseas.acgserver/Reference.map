@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd0" filename="AccountService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd1" filename="AccountService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd2" filename="AccountService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd3" filename="AccountService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?wsdl" filename="AccountService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?disco" filename="AccountService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://acgserver.boldseas.com/Service/AccountService.svc?xsd=xsd4" filename="AccountService3.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

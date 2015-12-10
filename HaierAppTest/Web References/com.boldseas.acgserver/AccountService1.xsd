@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Haier.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Haier.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserSearchInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DealerTypeIDToDealer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSearchDealer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSearchHeadquarters" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSearchTestUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSearchTrade" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSearchTrainUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KeyWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturersIDs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleIDToTrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaleAreaIDToDealer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaleAreaIDToTrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeIDToDealer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeIDToTrade" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserSearchInfo" nillable="true" type="tns:UserSearchInfo" />
+  <xs:complexType name="ArrayOfSYS_User">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_User" nillable="true" type="tns:SYS_User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_User" nillable="true" type="tns:ArrayOfSYS_User" />
+  <xs:complexType name="SYS_User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" type="xs:int" />
+      <xs:element minOccurs="0" name="Areaname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" type="xs:int" />
+      <xs:element minOccurs="0" name="Cityname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DealerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DealerTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="DealvelType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Depname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastLoginDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleFunlist" nillable="true" type="tns:ArrayOfSYS_Module_Fun" />
+      <xs:element minOccurs="0" name="Name_CN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name_EN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgnizationID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentDealerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" type="xs:int" />
+      <xs:element minOccurs="0" name="Provincename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleList" nillable="true" type="tns:ArrayOfSYS_Role" />
+      <xs:element minOccurs="0" name="SaleArea" type="xs:int" />
+      <xs:element minOccurs="0" name="Sex" type="xs:int" />
+      <xs:element minOccurs="0" name="SexName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TelPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="TradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS_User" nillable="true" type="tns:SYS_User" />
+  <xs:complexType name="ArrayOfSYS_Module_Fun">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_Module_Fun" nillable="true" type="tns:SYS_Module_Fun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_Module_Fun" nillable="true" type="tns:ArrayOfSYS_Module_Fun" />
+  <xs:complexType name="SYS_Module_Fun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FunCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS_Module_Fun" nillable="true" type="tns:SYS_Module_Fun" />
+  <xs:complexType name="ArrayOfSYS_Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_Role" nillable="true" type="tns:SYS_Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_Role" nillable="true" type="tns:ArrayOfSYS_Role" />
+  <xs:complexType name="SYS_Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoleDes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserTypeID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS_Role" nillable="true" type="tns:SYS_Role" />
+  <xs:complexType name="ArrayOfSYS_UserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_UserRole" nillable="true" type="tns:SYS_UserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_UserRole" nillable="true" type="tns:ArrayOfSYS_UserRole" />
+  <xs:complexType name="SYS_UserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS_UserRole" nillable="true" type="tns:SYS_UserRole" />
+  <xs:complexType name="ArrayOfSYS_Module">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_Module" nillable="true" type="tns:SYS_Module" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_Module" nillable="true" type="tns:ArrayOfSYS_Module" />
+  <xs:complexType name="SYS_Module">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleName_EN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS_Module" nillable="true" type="tns:SYS_Module" />
+  <xs:complexType name="ArrayOfSYS_Role_Fun">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYS_Role_Fun" nillable="true" type="tns:SYS_Role_Fun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYS_Role_Fun" nillable="true" type="tns:ArrayOfSYS_Role_Fun" />
+  <xs:complexType name="SYS_Role_Fun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FunID" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYS_Role_Fun" nillable="true" type="tns:SYS_Role_Fun" />
+  <xs:complexType name="ArrayOfWeb_UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Web_UserInfo" nillable="true" type="tns:Web_UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWeb_UserInfo" nillable="true" type="tns:ArrayOfWeb_UserInfo" />
+  <xs:complexType name="Web_UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" type="xs:int" />
+      <xs:element minOccurs="0" name="BBSUserID" type="xs:int" />
+      <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="City" type="xs:int" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentPosition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Industry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValiad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastLoginDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Partment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" type="xs:int" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Validate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="seatInfo" nillable="true" type="tns:WebChat_Seat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Web_UserInfo" nillable="true" type="tns:Web_UserInfo" />
+  <xs:complexType name="WebChat_Seat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SeatLoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatLoginPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebChat_Seat" nillable="true" type="tns:WebChat_Seat" />
+  <xs:complexType name="CheckRegUserInfoInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckRegUserInfoInput" nillable="true" type="tns:CheckRegUserInfoInput" />
+  <xs:complexType name="CheckRegUserInfoOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="eMailExists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mobilePhoneExists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="userNameExists" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckRegUserInfoOutput" nillable="true" type="tns:CheckRegUserInfoOutput" />
+  <xs:complexType name="Web_CodeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="UserPhone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Web_CodeInfo" nillable="true" type="tns:Web_CodeInfo" />
+</xs:schema>

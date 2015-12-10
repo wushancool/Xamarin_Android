@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+    <TextView
+        android:id="@+id/form_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请填写集团portal帐号，或客户87,88码" />
+    <LinearLayout
+        android:id="@+id/layout_login_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5.0dip"
+        android:layout_marginTop="10.0dip"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录名：" />
+        <EditText
+            android:id="@+id/txt_login_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15.0sp"
+            android:text="8800136222"
+            android:textColor="@android:color/background_dark" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/login_pwd_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_login_name"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5.0dip"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/login_pass_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密  码："
+            android:textSize="15.0sp"
+            android:layout_marginLeft="4dp" />
+        <EditText
+            android:id="@+id/txt_login_pwd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:textSize="15.0sp"
+            android:textColor="@android:color/background_dark"
+            android:text="123456" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="170.4dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="btn_click"
+        android:text="登陆"
+        android:background="@android:color/holo_blue_light" />
+    <Button
+        android:text="退出"
+        android:layout_width="170.4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_exit"
+        android:textColor="@android:color/holo_orange_dark"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_blue_light"
+        android:layout_margin="5.0dip" />
+</LinearLayout>

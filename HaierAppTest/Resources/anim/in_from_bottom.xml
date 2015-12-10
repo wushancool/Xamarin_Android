@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" android:interpolator="@android:anim/bounce_interpolator">
+  <translate android:startOffset="500" android:fromYDelta="200" android:toYDelta="10" android:duration="10000" />
+  <!--<alpha android:fromAlpha="1" android:startOffset="500" android:duration="2000" android:toAlpha="0" />-->
+  <!--<CycleInterpolator android:startOffset="500" android:fromYDelta="0" android:toYDelta="100" android:duration="2000"></CycleInterpolator>-->
+</set>
+<!--Interpolator：表示下面的动画的过渡形式，比如逐渐变慢或者逐渐变快。
+
+startOffset：表示动画开始前的延迟（单位毫秒）。
+
+fromYDelta：表示动画开始的位置（其中80%p表示屏幕的80%的高度部分，对应的还有fromXDelta属性）。
+
+toYDelta：表示动画结束的位置（对应的还有toXDelta属性）。
+
+Duration：表示动画持续的时间（单位毫秒）。-->
