@@ -177,5 +177,29 @@ namespace HaierAppTest
 
             this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
         }
+
+        private DateTime? lastBackKeyDownTime;
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
+        {
+            if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)
+            {
+                if (!lastBackKeyDownTime.HasValue || DateTime.Now - lastBackKeyDownTime.Value > new TimeSpan(0, 0, 2))
+                {
+                    Toast.MakeText(this.ApplicationContext, "再按一次退出程序", ToastLength.Short).Show();
+
+                    lastBackKeyDownTime = DateTime.Now;
+                }
+                else
+                {
+                    Intent exitIntent = new Intent(Intent.ActionMain);
+                    exitIntent.AddCategory(Intent.CategoryHome);
+                    exitIntent.SetFlags(ActivityFlags.NewTask);
+                    StartActivity(exitIntent);
+                    Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+                }
+                return true;
+            }
+            return base.OnKeyDown(keyCode, e);
+        }
     }
 }
