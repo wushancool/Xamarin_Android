@@ -165,7 +165,14 @@ namespace HaierAppTest
         /// <param name="e"></param>
         private void Btnsave_Click(object sender, EventArgs e)
         {
-            
+            AlertDialog alert = new AlertDialog.Builder(this)
+                        .SetTitle("保存提醒")
+                        .SetMessage("确定要保存数据库.")
+                        .SetPositiveButton("确定", delegate { })
+                        .SetNegativeButton("取消", delegate { })
+                        //.SetNeutralButton("",delegate { })
+                        .Create();
+            alert.Show();
         }
         /// <summary>
         /// 返回按钮事件
