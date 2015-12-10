@@ -18,12 +18,32 @@ namespace HaierAppTest
     [Activity(Label = "海尔ACG")]
     public class ApplicationMasterActivity : Activity
     {
+        #region 私有对象
+        /// <summary>
+        /// 条码扫描器
+        /// </summary>
         private MobileBarcodeScanner scanner;
+        /// <summary>
+        /// ListView相关对象
+        /// </summary>
         private ListView lv;
         private ArrayAdapter<string> _adapter;
+        /// <summary>
+        /// 储存条码对象
+        /// </summary>
         private List<BarCodeInfo> barCodeList;
         private List<string> barCodes;
+        /// <summary>
+        /// SQLite连接对象
+        /// </summary>
         private SQLiteConnection sqliConn;
+        /// <summary>
+        /// 点击"返回"按钮时间
+        /// </summary>
+        private DateTime? lastBackKeyDownTime;
+        #endregion
+
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -109,7 +129,9 @@ namespace HaierAppTest
             btntempsave.Click += Btntempsave_Click;
             btnsave.Click += Btnsave_Click;
         }
-
+        /// <summary>
+        /// 初始化ListView
+        /// </summary>
         private void InitList()
         {
             barCodeList = sqliConn.Table<BarCodeInfo>().ToList();
@@ -124,7 +146,11 @@ namespace HaierAppTest
                 lv.Adapter = _adapter;
             }
         }
-
+        /// <summary>
+        /// 保存按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btntempsave_Click(object sender, EventArgs e)
         {
             sqliConn.DeleteAll<BarCodeInfo>();
@@ -132,17 +158,28 @@ namespace HaierAppTest
             int res= sqliConn.InsertAll(saveListObj);
             this.RunOnUiThread(() => Toast.MakeText(this, "成功临时保存【" + res.ToString() + "】条", ToastLength.Short).Show());
         }
-
+        /// <summary>
+        /// 临时保存按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btnsave_Click(object sender, EventArgs e)
         {
             
         }
-
+        /// <summary>
+        /// 返回按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btnback_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(MainActivity));
         }
-
+        /// <summary>
+        /// 扫描回调函数
+        /// </summary>
+        /// <param name="result"></param>
         void HandleScanResult(ZXing.Result result)
         {
             string msg = "";
@@ -177,8 +214,12 @@ namespace HaierAppTest
 
             this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
         }
-
-        private DateTime? lastBackKeyDownTime;
+        /// <summary>
+        /// 双击返回退出应用程序
+        /// </summary>
+        /// <param name="keyCode"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
         {
             if (keyCode == Keycode.Back && e.Action == KeyEventActions.Down)
