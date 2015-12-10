@@ -15,7 +15,7 @@ using Android.Views.Animations;
 
 namespace HaierAppTest
 {
-    [Activity(Label = "海尔ACG")]
+    [Activity(Label = "海尔ACG", Icon = "@drawable/haieracg")]
     public class ApplicationMasterActivity : Activity
     {
         #region 私有对象
