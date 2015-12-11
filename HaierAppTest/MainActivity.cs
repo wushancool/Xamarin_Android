@@ -30,13 +30,7 @@ namespace HaierAppTest
             sql.onCreate();
             sqliConn = sql.SQLConn;
 
-            if (!CheckNetwork())
-            {
-                msg = "请检查网络连接";
-                this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
-                return;
-            }
-
+            
             HaierAppTest.com.boldseas.acgserver.AccountService account = new com.boldseas.acgserver.AccountService();
             //account.UserLogin()
 
@@ -104,6 +98,12 @@ namespace HaierAppTest
             // Get our button from the layout resource,
             // and attach an event to it
             //Button button = FindViewById<Button>(Resource.Id.MyButton);
+            if (!CheckNetwork())
+            {
+                msg = "请检查网络连接";
+                this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
+                return;
+            }
 
             //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
         }
@@ -126,6 +126,7 @@ namespace HaierAppTest
         private bool CheckNetwork()
         {
             NetworkConnection network = new NetworkConnection();
+            network.CheckNetworkConnection();
             return network.IsConnected;
         }
         #endregion
