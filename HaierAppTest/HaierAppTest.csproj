@@ -224,6 +224,7 @@
     <AndroidResource Include="Resources\drawable\haieracg.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\Remark.txt" />
     <Content Include="PluginsHelp\ConnectivityReadme.txt" />
     <AndroidResource Include="Resources\anim\in_from_bottom.xml" />
     <AndroidResource Include="Resources\anim\out_from_bottom.xml" />
