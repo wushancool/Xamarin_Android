@@ -30,6 +30,13 @@ namespace HaierAppTest
             sql.onCreate();
             sqliConn = sql.SQLConn;
 
+            if (!CheckNetwork())
+            {
+                msg = "请检查网络连接";
+                this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
+                return;
+            }
+
             HaierAppTest.com.boldseas.acgserver.AccountService account = new com.boldseas.acgserver.AccountService();
             //account.UserLogin()
 
@@ -39,8 +46,17 @@ namespace HaierAppTest
             EditText txtLoginName = FindViewById<EditText>(Resource.Id.txt_login_name);
             EditText txtLoginPwd = FindViewById<EditText>(Resource.Id.txt_login_pwd);
             TextView txtMsg = FindViewById<TextView>(Resource.Id.form_title);
+
             button.Click += delegate {
-                if(string.IsNullOrEmpty(txtLoginName.Text))
+
+                if (!CheckNetwork())
+                {
+                    msg = "请检查网络连接";
+                    this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtLoginName.Text))
                 { 
                     AlertDialog alert = new AlertDialog.Builder(this)
                         .SetTitle("登陆验证")
@@ -55,6 +71,7 @@ namespace HaierAppTest
                 {
                     msg = "请输入密码";
                     this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
+                    return;
                 }
                 
                 SYS_User loginUser = new SYS_User();
@@ -102,6 +119,14 @@ namespace HaierAppTest
             Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
 
             //另外，this.Finish();
+        }
+        #endregion
+
+        #region 检测网络
+        private bool CheckNetwork()
+        {
+            NetworkConnection network = new NetworkConnection();
+            return network.IsConnected;
         }
         #endregion
     }

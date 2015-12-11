@@ -53,7 +53,7 @@ namespace HaierAppTest
 
             SQLiteHelper sql = new SQLiteHelper();
             sqliConn = sql.SQLConn;
-
+           
             scanner = new MobileBarcodeScanner();
             Button barcodeBtn = this.FindViewById<Button>(Resource.Id.btnBarcode);
             Button btnback = this.FindViewById<Button>(Resource.Id.btnback);
